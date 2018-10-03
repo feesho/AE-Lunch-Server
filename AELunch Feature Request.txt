@@ -1,0 +1,4 @@
+1. change boolean switch to LED for clarity in client
+2. exclude sending of email during weekends
+3. use HTML to make the email body fancier
+4. include successful entry to server from client
