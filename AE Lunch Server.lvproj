@@ -19,8 +19,57 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Store Inventory" Type="Folder">
+			<Item Name="Inventory FGV.vi" Type="VI" URL="../Inventory FGV.vi"/>
+			<Item Name="Open Device Info.vi" Type="VI" URL="../Open Device Info.vi"/>
+			<Item Name="Save Device Info.vi" Type="VI" URL="../Save Device Info.vi"/>
+			<Item Name="Search by SN.vi" Type="VI" URL="../Search by SN.vi"/>
+			<Item Name="Web Redirect Parameter Parser.vi" Type="VI" URL="../Web Redirect Parameter Parser.vi"/>
+		</Item>
 		<Item Name="Documentation.txt" Type="Document" URL="../Documentation.txt"/>
+		<Item Name="Globals.vi" Type="VI" URL="../Globals.vi"/>
+		<Item Name="NIInventory" Type="Web Service">
+			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
+			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
+			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
+			<Property Name="ws.guid" Type="Str">{4185DDC8-14D1-407D-B44C-80511BD74479}</Property>
+			<Property Name="ws.modifyLibraryFile" Type="Bool">true</Property>
+			<Property Name="ws.public_folder_name" Type="Str">HTML</Property>
+			<Property Name="ws.remoteDebugging" Type="Bool">false</Property>
+			<Property Name="ws.removeLibraryItems" Type="Bool">true</Property>
+			<Property Name="ws.removePolyVIs" Type="Bool">true</Property>
+			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
+			<Property Name="ws.SSE2" Type="Bool">true</Property>
+			<Property Name="ws.version.build" Type="Int">0</Property>
+			<Property Name="ws.version.fix" Type="Int">0</Property>
+			<Property Name="ws.version.major" Type="Int">1</Property>
+			<Property Name="ws.version.minor" Type="Int">0</Property>
+			<Item Name="Public Content" Type="Folder" URL="../HTML">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Startup VIs" Type="Startup VIs Container"/>
+			<Item Name="Web Resources" Type="HTTP WebResources Container">
+				<Item Name="Check_Out.vi" Type="VI" URL="../Check_Out.vi">
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+				</Item>
+				<Item Name="Query.vi" Type="VI" URL="../Query.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
+			</Item>
+		</Item>
 		<Item Name="Send to Server.vi" Type="VI" URL="../Send to Server.vi"/>
+		<Item Name="Test_ItemInventory.vi" Type="VI" URL="../Test_ItemInventory.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
@@ -28,11 +77,17 @@
 				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
 				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
 			</Item>
 			<Item Name="AE Data.ctl" Type="VI" URL="../AE Data.ctl"/>
 			<Item Name="Array AE Data.ctl" Type="VI" URL="../Array AE Data.ctl"/>
+			<Item Name="Array Device Info.ctl" Type="VI" URL="../Array Device Info.ctl"/>
+			<Item Name="Device Info.ctl" Type="VI" URL="../Device Info.ctl"/>
+			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="AE Lunch" Type="EXE">
@@ -245,11 +300,15 @@ AddOutputFilter chunkFilter
 		<Item Name="Controls" Type="Folder">
 			<Item Name="AE Data.ctl" Type="VI" URL="../AE Data.ctl"/>
 			<Item Name="Array AE Data.ctl" Type="VI" URL="../Array AE Data.ctl"/>
+			<Item Name="Array Device Info.ctl" Type="VI" URL="../Array Device Info.ctl"/>
+			<Item Name="Device Info.ctl" Type="VI" URL="../Device Info.ctl"/>
 		</Item>
 		<Item Name="SubVIs" Type="Folder">
-			<Item Name="AE Data FGV.vi" Type="VI" URL="../AE Data FGV.vi"/>
-			<Item Name="AE Lunch.vi" Type="VI" URL="../AE Lunch.vi"/>
-			<Item Name="Send HTML Email.vi" Type="VI" URL="../Send HTML Email.vi"/>
+			<Item Name="AE Lunch" Type="Folder">
+				<Item Name="AE Data FGV.vi" Type="VI" URL="../AE Data FGV.vi"/>
+				<Item Name="AE Lunch.vi" Type="VI" URL="../AE Lunch.vi"/>
+				<Item Name="Send HTML Email.vi" Type="VI" URL="../Send HTML Email.vi"/>
+			</Item>
 		</Item>
 		<Item Name="AELunch" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
@@ -315,6 +374,11 @@ AddOutputFilter chunkFilter
 				<Item Name="NI_Real-Time Target Support.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI_Real-Time Target Support.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 			</Item>
+			<Item Name="Globals.vi" Type="VI" URL="../Globals.vi"/>
+			<Item Name="Inventory FGV.vi" Type="VI" URL="../Inventory FGV.vi"/>
+			<Item Name="Open Device Info.vi" Type="VI" URL="../Open Device Info.vi"/>
+			<Item Name="Save Device Info.vi" Type="VI" URL="../Save Device Info.vi"/>
+			<Item Name="Search by SN.vi" Type="VI" URL="../Search by SN.vi"/>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
