@@ -282,7 +282,7 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="AELunch" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">12</Property>
+			<Property Name="Bld_version.build" Type="Int">16</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -294,7 +294,7 @@ AddOutputFilter chunkFilter
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">12</Property>
+			<Property Name="ws.version.build" Type="Int">16</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -333,6 +333,8 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="NIInventory" Type="Web Service">
+			<Property Name="Bld_buildSpecName" Type="Str"></Property>
+			<Property Name="Bld_version.build" Type="Int">4</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -345,7 +347,7 @@ AddOutputFilter chunkFilter
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">1</Property>
+			<Property Name="ws.version.build" Type="Int">5</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -405,6 +407,7 @@ AddOutputFilter chunkFilter
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="LabVIEWSMTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/smtpClient/LabVIEWSMTPClient.lvlib"/>
 				<Item Name="ni_emb.dll" Type="Document" URL="/&lt;vilib&gt;/ni_emb.dll"/>
@@ -423,8 +426,9 @@ AddOutputFilter chunkFilter
 				<Property Name="App_INI_aliasGUID" Type="Str">{5A78F6E2-44E4-4F5F-8CE5-4DC0B5ED557E}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{5D3171FA-8994-46CE-AA2C-20F6ABCE6B10}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService.count" Type="Int">2</Property>
 				<Property Name="App_webService[0].itemID" Type="Ref">/RT CompactRIO Target/AELunch</Property>
+				<Property Name="App_webService[1].itemID" Type="Ref">/RT CompactRIO Target/NIInventory</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{24C3063F-A529-4EE6-8649-D5AC5B00E1EC}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">My Real-Time Application</Property>
@@ -435,7 +439,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{269733F5-13EC-47DC-A8CE-01D5D703C143}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">12</Property>
+				<Property Name="Bld_version.build" Type="Int">16</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
