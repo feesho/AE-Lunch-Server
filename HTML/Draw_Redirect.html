@@ -30,6 +30,15 @@
     			<label for="InputEmail">Email address</label>
     			<input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
   			</div>
+			<div class="form-group">
+				<label for="InputPurpose">Loan Purpose</label>
+				<select class="form-control" id="InputPurpose">
+					<option>Demo</option>
+					<option>Customer Loan</option>
+					<option>Branch Loan</option>
+					<option>Others</option>
+				</select>
+			</div>
   			<button type="button" class="btn btn-primary btn-lg btn-block" onclick="submit_button()">Submit</button>
 		</form>
         
@@ -115,8 +124,8 @@ function getAllUrlParams(url)
 
 function submit_button()
 {
-	var string1 = "http://192.168.1.70:8001/NIInventory/Check_Out?serial=";
-    window.location.replace(string1.concat(getAllUrlParams().serial.toUpperCase(),"&name=",document.getElementById("InputName").value,"&email=",document.getElementById("InputEmail").value));
+	var string1 = "http://10.155.16.37:8002/NIInventory/Check_Out?serial=";
+    window.location.replace(string1.concat(getAllUrlParams().serial.toUpperCase(),"&name=",document.getElementById("InputName").value,"&email=",document.getElementById("InputEmail").value,"&purpose=",document.getElementById("InputPurpose").value));
 }
 
 {

@@ -1,0 +1,5 @@
+Debug - to modify the following
+
+1. globals.vi
+2. draw_redirect.html -> ip address + port
+3. search.html -> ip address + port
