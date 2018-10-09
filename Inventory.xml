@@ -1,0 +1,444 @@
+<Array>
+<Name>array of devices</Name>
+<Dimsize>11</Dimsize>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>NI-9234</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>ABCD1234A</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>NI-9234</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>ABCD1234B</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>NI-9234</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>ABCD1234C</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>NI-9234</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>ABCD1234D</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>USB-6225</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>1234ABCDA</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>USB-6225</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>1234ABCDB</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>USB-6225</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>1234ABCDC</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-Sales</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>PXIE-8880</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>1111AAAAA</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-MKT</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>PXIE-8880</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>2222BBBBB</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-MKT</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>PXIE-1085</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>3333CCCCC</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-MKT</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Device</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Model Number</Name>
+<Val>PXIE-1082</Val>
+</String>
+<String>
+<Name>Serial Number</Name>
+<Val>4444DDDDD</Val>
+</String>
+<Boolean>
+<Name>Available?</Name>
+<Val>1</Val>
+</Boolean>
+<String>
+<Name>Owner</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Owner Email</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Last Activity Date</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Loan Purpose</Name>
+<Val></Val>
+</String>
+<String>
+<Name>Department</Name>
+<Val>SG-MKT</Val>
+</String>
+<String>
+<Name>Notes</Name>
+<Val></Val>
+</String>
+</Cluster>
+</Array>

@@ -15,30 +15,25 @@
   <div class="panel-group">
 
     <div class="panel panel-primary">
-      <div class="panel-heading"><h3><strong>Device Draw Form</strong><h3></div>
+      <div class="panel-heading"><h3><strong>Add New Device Form</strong><h3></div>
       <div class="panel-body">
       	<p><h3>Item details</h3></p>
-        <p><dt>Model number: </dt><p id="model">PXIe-xxxx</p></p>
-        <p><dt>Serial number: </dt><p id="serial">AAAAAAAA</p></p>
+        <p><dt>Identifier: </dt><p id="identifier">Identity</p></p>
         
         <form>
   			<div class="form-group">
-    			<label for="Inpur Name">Name</label>
-    			<input type="text" class="form-control" id="InputName" placeholder="Enter name">    			
+    			<label for="Inpur Name">Model Number: </label>
+    			<input type="text" class="form-control" id="InputModel" placeholder="Eg. PXIE-8135">    			
   			</div>
   			<div class="form-group">
-    			<label for="InputEmail">Email address</label>
-    			<input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+    			<label for="InputEmail">Serial Number: </label>
+    			<input type="text" class="form-control" id="InputSerial" placeholder="Eg. 1A2BA3">
   			</div>
 			<div class="form-group">
-				<label for="InputPurpose">Loan Purpose</label>
-				<select class="form-control" id="InputPurpose">
-					<option>Demo</option>
-					<option>Customer Loan</option>
-					<option>Branch Loan</option>
-					<option>Others</option>
-				</select>
-			</div>
+    			<label for="Inpur Name">Department: </label>
+    			<input type="text" class="form-control" id="InputDepartment" placeholder="Eg. SG-Sales">    			
+  			</div>
+			
   			<button type="button" class="btn btn-primary btn-lg btn-block" onclick="submit_button()">Submit</button>
 		</form>
         
@@ -124,13 +119,12 @@ function getAllUrlParams(url)
 
 function submit_button()
 {
-	var string1 = "http://SG-Inventory:8002/NIInventory/Check_Out?serial=";
-    window.location.replace(string1.concat(getAllUrlParams().serial.toUpperCase(),"&name=",document.getElementById("InputName").value,"&email=",document.getElementById("InputEmail").value,"&purpose=",document.getElementById("InputPurpose").value));
+	var string1 = "http://SG-Inventory:8002/NIInventory/Add_New_Device?identifier=";
+    window.location.replace(string1.concat(getAllUrlParams().identifier.toUpperCase(),"&model=",document.getElementById("InputModel").value,"&serial=",document.getElementById("InputSerial").value,"&department=",document.getElementById("InputDepartment").value));
 }
 
 {
-	document.getElementById("model").innerHTML = getAllUrlParams().model;
-	document.getElementById("serial").innerHTML = getAllUrlParams().serial;
+	document.getElementById("identifier").innerHTML = getAllUrlParams().identifier;
 }
 
 </script>
