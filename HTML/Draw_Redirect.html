@@ -20,14 +20,15 @@
       	<p><h3>Item details</h3></p>
         <p><dt>Model number: </dt><p id="model">PXIe-xxxx</p></p>
         <p><dt>Serial number: </dt><p id="serial">AAAAAAAA</p></p>
+		<p><dt>Identifier: </dt><p id="identifier">AAAAAAAA</p></p>
         
         <form>
   			<div class="form-group">
-    			<label for="Inpur Name">Name</label>
+    			<label for="Input Name">Name</label>
     			<input type="text" class="form-control" id="InputName" placeholder="Enter name">    			
   			</div>
   			<div class="form-group">
-    			<label for="InputEmail">Email address</label>
+    			<label for="Input Email">Email address</label>
     			<input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
   			</div>
 			<div class="form-group">
@@ -39,6 +40,10 @@
 					<option>Others</option>
 				</select>
 			</div>
+			<div class="form-group">
+    			<label for="Input Name">Notes</label>
+    			<input type="text" class="form-control" id="InputNotes" placeholder="Enter notes">    			
+  			</div>
   			<button type="button" class="btn btn-primary btn-lg btn-block" onclick="submit_button()">Submit</button>
 		</form>
         
@@ -125,12 +130,21 @@ function getAllUrlParams(url)
 function submit_button()
 {
 	var string1 = "http://SG-Inventory:8002/NIInventory/Check_Out?serial=";
-    window.location.replace(string1.concat(getAllUrlParams().serial.toUpperCase(),"&name=",document.getElementById("InputName").value,"&email=",document.getElementById("InputEmail").value,"&purpose=",document.getElementById("InputPurpose").value));
+    window.location.replace
+	(
+		string1.concat
+		(
+			getAllUrlParams().serial.toUpperCase(),"&name=",document.getElementById("InputName").value,
+			"&email=",document.getElementById("InputEmail").value,"&purpose=",document.getElementById("InputPurpose").value,
+			"&identifier=",getAllUrlParams().identifier.toUpperCase(),"&notes=",document.getElementById("InputNotes").value
+		)
+	);
 }
 
 {
 	document.getElementById("model").innerHTML = getAllUrlParams().model;
 	document.getElementById("serial").innerHTML = getAllUrlParams().serial;
+	document.getElementById("identifier").innerHTML = getAllUrlParams().identifier;
 }
 
 </script>

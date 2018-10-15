@@ -44,8 +44,9 @@
 			<Item Name="Inventory FGV.vi" Type="VI" URL="../Inventory FGV.vi"/>
 			<Item Name="Open Device Info.vi" Type="VI" URL="../Open Device Info.vi"/>
 			<Item Name="Save Device Info.vi" Type="VI" URL="../Save Device Info.vi"/>
+			<Item Name="Search by identifier.vi" Type="VI" URL="../Search by identifier.vi"/>
 			<Item Name="Search by MODEL.vi" Type="VI" URL="../Search by MODEL.vi"/>
-			<Item Name="Search by SN.vi" Type="VI" URL="../Search by SN.vi"/>
+			<Item Name="Search by serial.vi" Type="VI" URL="../Search by serial.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="AE Lunch" Type="EXE">
@@ -224,22 +225,26 @@ DirectoryIndex index.htm
 			<Item Name="AE Lunch" Type="Folder">
 				<Item Name="AE Data FGV.vi" Type="VI" URL="../AE Data FGV.vi"/>
 				<Item Name="AE Lunch.vi" Type="VI" URL="../AE Lunch.vi"/>
+				<Item Name="AE Lunch_KFCUpdate.vi" Type="VI" URL="../AE Lunch_KFCUpdate.vi"/>
 				<Item Name="Send HTML Email.vi" Type="VI" URL="../Send HTML Email.vi"/>
 			</Item>
 			<Item Name="Store Inventory" Type="Folder">
+				<Item Name="Create Backup.vi" Type="VI" URL="../Create Backup.vi"/>
 				<Item Name="Create XML File.vi" Type="VI" URL="../Create XML File.vi"/>
 				<Item Name="Inventory FGV.vi" Type="VI" URL="../Inventory FGV.vi"/>
 				<Item Name="Open Device Info.vi" Type="VI" URL="../Open Device Info.vi"/>
+				<Item Name="Parse Table HTML SEARCHABLE.vi" Type="VI" URL="../Parse Table HTML SEARCHABLE.vi"/>
 				<Item Name="Parse Table HTML.vi" Type="VI" URL="../Parse Table HTML.vi"/>
 				<Item Name="Save Device Info.vi" Type="VI" URL="../Save Device Info.vi"/>
+				<Item Name="Search by identifier.vi" Type="VI" URL="../Search by identifier.vi"/>
 				<Item Name="Search by MODEL.vi" Type="VI" URL="../Search by MODEL.vi"/>
-				<Item Name="Search by SN.vi" Type="VI" URL="../Search by SN.vi"/>
+				<Item Name="Search by serial.vi" Type="VI" URL="../Search by serial.vi"/>
 				<Item Name="Web Redirect Parameter Parser.vi" Type="VI" URL="../Web Redirect Parameter Parser.vi"/>
 			</Item>
 		</Item>
 		<Item Name="AELunch" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">21</Property>
+			<Property Name="Bld_version.build" Type="Int">24</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -251,7 +256,7 @@ DirectoryIndex index.htm
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">21</Property>
+			<Property Name="ws.version.build" Type="Int">24</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -291,7 +296,7 @@ DirectoryIndex index.htm
 		</Item>
 		<Item Name="NIInventory" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">11</Property>
+			<Property Name="Bld_version.build" Type="Int">21</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -304,14 +309,18 @@ DirectoryIndex index.htm
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">12</Property>
+			<Property Name="ws.version.build" Type="Int">22</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
 			<Item Name="Public Content" Type="Folder" URL="../HTML">
 				<Property Name="NI.DISK" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Startup VIs" Type="Startup VIs Container"/>
+			<Item Name="Startup VIs" Type="Startup VIs Container">
+				<Item Name="Initialize.vi" Type="VI" URL="../Initialize.vi">
+					<Property Name="ws.type" Type="Int">2</Property>
+				</Item>
+			</Item>
 			<Item Name="Web Resources" Type="HTTP WebResources Container">
 				<Item Name="Add_New_Device.vi" Type="VI" URL="../Add_New_Device.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
@@ -329,6 +338,21 @@ DirectoryIndex index.htm
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 				<Item Name="Check_Out.vi" Type="VI" URL="../Check_Out.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
+				<Item Name="Delete_Device.vi" Type="VI" URL="../Delete_Device.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
@@ -375,7 +399,8 @@ DirectoryIndex index.htm
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="RT-Main.vi" Type="VI" URL="../RT-Main.vi"/>
+		<Item Name="RT-Main (inventory only).vi" Type="VI" URL="../RT-Main (inventory only).vi"/>
+		<Item Name="RT-Main (lunch only).vi" Type="VI" URL="../RT-Main (lunch only).vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
@@ -393,25 +418,24 @@ DirectoryIndex index.htm
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="My Real-Time Application" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
+			<Item Name="Inventory Only" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{5A78F6E2-44E4-4F5F-8CE5-4DC0B5ED557E}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{5D3171FA-8994-46CE-AA2C-20F6ABCE6B10}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="App_webService.count" Type="Int">2</Property>
-				<Property Name="App_webService[0].itemID" Type="Ref">/RT CompactRIO Target/AELunch</Property>
-				<Property Name="App_webService[1].itemID" Type="Ref">/RT CompactRIO Target/NIInventory</Property>
+				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/RT CompactRIO Target/NIInventory</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{24C3063F-A529-4EE6-8649-D5AC5B00E1EC}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">My Real-Time Application</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Inventory Only</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/My Real-Time Application</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/Inventory Only</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{269733F5-13EC-47DC-A8CE-01D5D703C143}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">21</Property>
+				<Property Name="Bld_version.build" Type="Int">31</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
@@ -425,12 +449,18 @@ DirectoryIndex index.htm
 				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/system/www</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A40D6955-273B-4FF7-9BE8-3DD887078A3D}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C3B9C422-2C88-43C3-8C20-03619E54711A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (lunch only).vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[10].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Success.html</Property>
+				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[11].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Unauthorized.html</Property>
+				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Draw_Redirect.html</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -446,13 +476,65 @@ DirectoryIndex index.htm
 				<Property Name="Source[6].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[6].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Search.html</Property>
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">7</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Add_Device.html</Property>
+				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Delete.html</Property>
+				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[9].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Delete_Success.html</Property>
+				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">12</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">My Real-Time Application</Property>
-				<Property Name="TgtF_internalName" Type="Str">My Real-Time Application</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Inventory Only</Property>
+				<Property Name="TgtF_internalName" Type="Str">Inventory Only</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
-				<Property Name="TgtF_productName" Type="Str">My Real-Time Application</Property>
+				<Property Name="TgtF_productName" Type="Str">Inventory Only</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{40E9EFA2-EC95-40FD-9BCA-4C2E42712C9B}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">startup.rtexe</Property>
+			</Item>
+			<Item Name="Lunch Only" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{53CEC104-8675-4880-9C49-0756D2523942}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{FF7BF5DD-9AA3-458C-A6DD-425EE3038F12}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/RT CompactRIO Target/AELunch</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{82579AEB-910C-4C72-B5D9-278385E58FB0}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Lunch Only</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/Lunch Only</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{430E5347-EB7B-4713-8CE2-19EC34C35BE4}</Property>
+				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
+				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/c/ni-rt/startup/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C3B9C422-2C88-43C3-8C20-03619E54711A}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (lunch only).vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Lunch Only</Property>
+				<Property Name="TgtF_internalName" Type="Str">Lunch Only</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
+				<Property Name="TgtF_productName" Type="Str">Lunch Only</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{7091FCDD-1F26-470C-9E81-8FE4DD7D8C54}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">startup.rtexe</Property>
 			</Item>
 		</Item>

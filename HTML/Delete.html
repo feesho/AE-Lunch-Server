@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NISG Loaner Pool Inventory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  <h2>NISG Loaner Pool Inventory</h2>
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h3><strong>Delete Device</strong><h3>
+	  <p><h5>Please search using Serial Number</h5></p>
+	  </div>
+      <div class="panel-body">
+        <form class="form-inline">
+  			<div class="form-group ">
+    			<label for="Input Model">Serial Number: </label>
+    			<input type="text" class="form-control" id="InputSerial" placeholder="Eg. PXIE-4139, NI-9234">    			
+  			</div>
+			<div class="form-group">
+			</div>
+  			<button type="button" class="btn btn-primary btn-lg" onclick="search_button()">Search</button>
+		</form>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function search_button()
+{
+	var string1 = "http://SG-Inventory:8002/NIInventory/Delete_Device?serial=";
+    window.location.href = (string1.concat(document.getElementById("InputSerial").value));
+}
+</script>
+
+</body>
+</html>

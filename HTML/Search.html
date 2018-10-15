@@ -19,13 +19,17 @@
 	  </div>
       <div class="panel-body">
         <form class="form-inline">
-  			<div class="form-group ">
+  			<div class="form-group">
     			<label for="Input Model">Model</label>
     			<input type="text" class="form-control" id="InputModel" placeholder="Eg. PXIE-4139, NI-9234">    			
   			</div>
 			<div class="form-group">
+				<button type="button" class="btn btn-primary btn-lg" onclick="search_button()">Search</button>
 			</div>
-  			<button type="button" class="btn btn-primary btn-lg" onclick="search_button()">Search</button>
+			<div class="form-group">
+				<button type="button" class="btn btn-info btn-lg" onclick="search_button2()">Search All(Beta)</button>
+			</div>
+  			
 		</form>
         
       </div>
@@ -40,6 +44,13 @@ function search_button()
 	var string1 = "http://SG-Inventory:8002/NIInventory/Search_Model?model=";
     window.location.href = (string1.concat(document.getElementById("InputModel").value));
 }
+
+function search_button2()
+{
+	var string1 = "http://SG-Inventory:8002/NIInventory/Search_Model?model=ALL";
+    window.location.href = (string1);
+}
+
 </script>
 
 </body>
