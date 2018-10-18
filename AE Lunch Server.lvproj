@@ -239,12 +239,13 @@ DirectoryIndex index.htm
 				<Item Name="Search by identifier.vi" Type="VI" URL="../Search by identifier.vi"/>
 				<Item Name="Search by MODEL.vi" Type="VI" URL="../Search by MODEL.vi"/>
 				<Item Name="Search by serial.vi" Type="VI" URL="../Search by serial.vi"/>
+				<Item Name="Web Redirect Parameter Parser - Return.vi" Type="VI" URL="../Web Redirect Parameter Parser - Return.vi"/>
 				<Item Name="Web Redirect Parameter Parser.vi" Type="VI" URL="../Web Redirect Parameter Parser.vi"/>
 			</Item>
 		</Item>
 		<Item Name="AELunch" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">24</Property>
+			<Property Name="Bld_version.build" Type="Int">25</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -256,7 +257,7 @@ DirectoryIndex index.htm
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">24</Property>
+			<Property Name="ws.version.build" Type="Int">25</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -296,7 +297,7 @@ DirectoryIndex index.htm
 		</Item>
 		<Item Name="NIInventory" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">21</Property>
+			<Property Name="Bld_version.build" Type="Int">26</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -309,7 +310,7 @@ DirectoryIndex index.htm
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">22</Property>
+			<Property Name="ws.version.build" Type="Int">27</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -382,6 +383,21 @@ DirectoryIndex index.htm
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
+				<Item Name="Return.vi" Type="VI" URL="../Return.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
 				<Item Name="Search_Model.vi" Type="VI" URL="../Search_Model.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
@@ -435,7 +451,7 @@ DirectoryIndex index.htm
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{269733F5-13EC-47DC-A8CE-01D5D703C143}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">31</Property>
+				<Property Name="Bld_version.build" Type="Int">36</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
@@ -449,7 +465,7 @@ DirectoryIndex index.htm
 				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/system/www</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="Source[0].itemID" Type="Str">{C3B9C422-2C88-43C3-8C20-03619E54711A}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{03D07CB6-A781-480D-B136-13B1B69C1ED5}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (lunch only).vi</Property>
@@ -461,6 +477,9 @@ DirectoryIndex index.htm
 				<Property Name="Source[11].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[11].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Unauthorized.html</Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[12].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Return_Redirect.html</Property>
+				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Draw_Redirect.html</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -485,7 +504,7 @@ DirectoryIndex index.htm
 				<Property Name="Source[9].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Delete_Success.html</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">12</Property>
+				<Property Name="SourceCount" Type="Int">13</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Inventory Only</Property>
 				<Property Name="TgtF_internalName" Type="Str">Inventory Only</Property>
@@ -511,7 +530,7 @@ DirectoryIndex index.htm
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{430E5347-EB7B-4713-8CE2-19EC34C35BE4}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
@@ -522,7 +541,7 @@ DirectoryIndex index.htm
 				<Property Name="Destination[1].path" Type="Path">/c/ni-rt/startup/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{C3B9C422-2C88-43C3-8C20-03619E54711A}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{84DD875C-6DB7-4B89-8DEA-C2958549B644}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (lunch only).vi</Property>
