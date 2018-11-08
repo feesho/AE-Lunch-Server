@@ -64,16 +64,16 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{6665C0F5-3336-4F8A-8A33-899E7C4F96FD}</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">AE Lunch V1.1.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/AE Lunch/AE Lunch V1.1.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">AE Lunch V1.2.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/AE Lunch/AE Lunch V1.2.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/AE Lunch/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{E6BD4533-85B9-4172-A381-4392A4CC1E72}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C79C7E0D-F9CE-417A-971A-4AADC535E40F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Send to Server.vi</Property>
@@ -86,7 +86,7 @@
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
 				<Property Name="TgtF_productName" Type="Str">AE Lunch</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{0CADF997-4539-43F9-A5C2-2F94271D2820}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">AE Lunch V1.1.exe</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AE Lunch V1.2.exe</Property>
 			</Item>
 			<Item Name="AE Lunch Client V1.1" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">AE Lunch Server</Property>
@@ -220,6 +220,7 @@ DirectoryIndex index.htm
 			<Item Name="Device Info.ctl" Type="VI" URL="../Device Info.ctl"/>
 			<Item Name="Globals.vi" Type="VI" URL="../Globals.vi"/>
 			<Item Name="Inventory FGV Command.ctl" Type="VI" URL="../Inventory FGV Command.ctl"/>
+			<Item Name="Update Screen.ctl" Type="VI" URL="../Update Screen.ctl"/>
 		</Item>
 		<Item Name="SubVIs" Type="Folder">
 			<Item Name="AE Lunch" Type="Folder">
@@ -227,6 +228,7 @@ DirectoryIndex index.htm
 				<Item Name="AE Lunch.vi" Type="VI" URL="../AE Lunch.vi"/>
 				<Item Name="AE Lunch_KFCUpdate.vi" Type="VI" URL="../AE Lunch_KFCUpdate.vi"/>
 				<Item Name="Send HTML Email.vi" Type="VI" URL="../Send HTML Email.vi"/>
+				<Item Name="String to IP.vi" Type="VI" URL="../String to IP.vi"/>
 			</Item>
 			<Item Name="Store Inventory" Type="Folder">
 				<Item Name="Create Backup.vi" Type="VI" URL="../Create Backup.vi"/>
@@ -239,13 +241,16 @@ DirectoryIndex index.htm
 				<Item Name="Search by identifier.vi" Type="VI" URL="../Search by identifier.vi"/>
 				<Item Name="Search by MODEL.vi" Type="VI" URL="../Search by MODEL.vi"/>
 				<Item Name="Search by serial.vi" Type="VI" URL="../Search by serial.vi"/>
+				<Item Name="Update Screen - All.vi" Type="VI" URL="../Update Screen - All.vi"/>
+				<Item Name="Update Screen - Lunch.vi" Type="VI" URL="../Update Screen - Lunch.vi"/>
+				<Item Name="Update Screen.vi" Type="VI" URL="../Update Screen.vi"/>
 				<Item Name="Web Redirect Parameter Parser - Return.vi" Type="VI" URL="../Web Redirect Parameter Parser - Return.vi"/>
 				<Item Name="Web Redirect Parameter Parser.vi" Type="VI" URL="../Web Redirect Parameter Parser.vi"/>
 			</Item>
 		</Item>
 		<Item Name="AELunch" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">25</Property>
+			<Property Name="Bld_version.build" Type="Int">32</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -257,7 +262,7 @@ DirectoryIndex index.htm
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">25</Property>
+			<Property Name="ws.version.build" Type="Int">32</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -293,11 +298,26 @@ DirectoryIndex index.htm
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
+				<Item Name="Send_Lunch_Email.vi" Type="VI" URL="../Send_Lunch_Email.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
 			</Item>
 		</Item>
 		<Item Name="NIInventory" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">26</Property>
+			<Property Name="Bld_version.build" Type="Int">41</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -310,7 +330,7 @@ DirectoryIndex index.htm
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">27</Property>
+			<Property Name="ws.version.build" Type="Int">42</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -415,12 +435,45 @@ DirectoryIndex index.htm
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="RT-Main (BOTH).vi" Type="VI" URL="../RT-Main (BOTH).vi"/>
 		<Item Name="RT-Main (inventory only).vi" Type="VI" URL="../RT-Main (inventory only).vi"/>
 		<Item Name="RT-Main (lunch only).vi" Type="VI" URL="../RT-Main (lunch only).vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="cRIO_Display_API_ChangeOrientation.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/DisplayControl/cRIO_Display_API_ChangeOrientation.vi"/>
+				<Item Name="cRIO_Display_API_Close.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/DisplayControl/cRIO_Display_API_Close.vi"/>
+				<Item Name="cRIO_Display_API_DrawString.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/Graphics/cRIO_Display_API_DrawString.vi"/>
+				<Item Name="cRIO_Display_API_Initialize.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/DisplayControl/cRIO_Display_API_Initialize.vi"/>
+				<Item Name="cRIO_Display_API_SetGPIO.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/DisplayControl/cRIO_Display_API_SetGPIO.vi"/>
+				<Item Name="cRIO_Display_API_ToggleOnOff.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/DisplayControl/cRIO_Display_API_ToggleOnOff.vi"/>
+				<Item Name="cRIO_Display_CommandPlain.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Communication/cRIO_Display_CommandPlain.vi"/>
+				<Item Name="cRIO_Display_CommandTypes.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Communication/Typedef/cRIO_Display_CommandTypes.ctl"/>
+				<Item Name="cRIO_Display_CommandTypes.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Communication/cRIO_Display_CommandTypes.vi"/>
+				<Item Name="cRIO_Display_Control_Autobaud.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/cRIO_Display_Control_Autobaud.vi"/>
+				<Item Name="cRIO_Display_Control_CheckDisplay.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/cRIO_Display_Control_CheckDisplay.vi"/>
+				<Item Name="cRIO_Display_Control_ClearScreen.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/cRIO_Display_Control_ClearScreen.vi"/>
+				<Item Name="cRIO_Display_Control_ConvertColor.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/Lib/cRIO_Display_Control_ConvertColor.vi"/>
+				<Item Name="cRIO_Display_Control_CreateColorString.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/Lib/cRIO_Display_Control_CreateColorString.vi"/>
+				<Item Name="cRIO_Display_Control_CtrlFunctions.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/cRIO_Display_Control_CtrlFunctions.vi"/>
+				<Item Name="cRIO_Display_Control_OpaqueMode.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/cRIO_Display_Control_OpaqueMode.vi"/>
+				<Item Name="cRIO_Display_GenerateError.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/GenerateError/cRIO_Display_GenerateError.vi"/>
+				<Item Name="cRIO_Display_GenerateError_ErrorTypes.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/GenerateError/Typedefs/cRIO_Display_GenerateError_ErrorTypes.ctl"/>
+				<Item Name="cRIO_Display_HWIF_Close.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/HardwareInterface/API/cRIO_Display_HWIF_Close.vi"/>
+				<Item Name="cRIO_Display_HWIF_Handler.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/HardwareInterface/Lib/cRIO_Display_HWIF_Handler.vi"/>
+				<Item Name="cRIO_Display_HWIF_Init.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/HardwareInterface/API/cRIO_Display_HWIF_Init.vi"/>
+				<Item Name="cRIO_Display_HWIF_Read.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/HardwareInterface/API/cRIO_Display_HWIF_Read.vi"/>
+				<Item Name="cRIO_Display_HWIF_Write.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/HardwareInterface/API/cRIO_Display_HWIF_Write.vi"/>
+				<Item Name="cRIO_Display_ResponseTypes.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Communication/Typedef/cRIO_Display_ResponseTypes.ctl"/>
+				<Item Name="cRIO_Display_SubVIs_ConfigureBaud.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/DSP_Control/cRIO_Display_SubVIs_ConfigureBaud.vi"/>
+				<Item Name="cRIO_Display_SubVIs_Globals.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/SubVIs/cRIO_Display_SubVIs_Globals.vi"/>
+				<Item Name="cRIO_Display_SubVIs_StringConstants.vi" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/SubVIs/cRIO_Display_SubVIs_StringConstants.vi"/>
+				<Item Name="cRIO_Display_Typedefs_DisplayMode.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Typedefs/cRIO_Display_Typedefs_DisplayMode.ctl"/>
+				<Item Name="cRIO_Display_Typedefs_DisplayTypes.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Typedefs/cRIO_Display_Typedefs_DisplayTypes.ctl"/>
+				<Item Name="cRIO_Display_Typedefs_Fonts.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Typedefs/cRIO_Display_Typedefs_Fonts.ctl"/>
+				<Item Name="cRIO_Display_Typedefs_StringConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/Typedefs/cRIO_Display_Typedefs_StringConfig.ctl"/>
+				<Item Name="cRIODisplay_HWIF_Actions.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/Display/_Lib/HardwareInterface/Typedefs/cRIODisplay_HWIF_Actions.ctl"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="LabVIEWSMTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/smtpClient/LabVIEWSMTPClient.lvlib"/>
 				<Item Name="ni_emb.dll" Type="Document" URL="/&lt;vilib&gt;/ni_emb.dll"/>
@@ -428,12 +481,98 @@ DirectoryIndex index.htm
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_Real-Time Target Support.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI_Real-Time Target Support.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
+				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
+				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
+				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 			</Item>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
+			<Item Name="BOTH" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{220B7C75-4801-46AE-93FE-E9319B4A733E}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{AB155EFB-93B7-4513-B003-D31F7E7AA71D}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_webService.count" Type="Int">2</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/RT CompactRIO Target/AELunch</Property>
+				<Property Name="App_webService[1].itemID" Type="Ref">/RT CompactRIO Target/NIInventory</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{D5F9453A-FBE9-4D75-84B4-896C7C19FF8C}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">BOTH</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/BOTH</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{BA28C2D8-B283-45F5-9F28-A52E1CCB2924}</Property>
+				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
+				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
+				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/c/ni-rt/startup/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[2].destName" Type="Str">www</Property>
+				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/system/www</Property>
+				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">3</Property>
+				<Property Name="Source[0].itemID" Type="Str">{FE781EF6-3F7D-4E02-9A92-AAB592F74DD3}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (BOTH).vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[10].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Return_Success.html</Property>
+				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[11].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Search.html</Property>
+				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[12].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Success.html</Property>
+				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[13].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Unauthorized.html</Property>
+				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Add_Device.html</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Delete.html</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Delete_Success.html</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Draw_Redirect.html</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Draw_Success.html</Property>
+				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Error.html</Property>
+				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Error_Location.html</Property>
+				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[9].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Return_Redirect.html</Property>
+				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">14</Property>
+				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">BOTH</Property>
+				<Property Name="TgtF_internalName" Type="Str">BOTH</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
+				<Property Name="TgtF_productName" Type="Str">BOTH</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{8B6C3BD7-CC57-4473-A49A-BA591F79B0B2}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">startup.rtexe</Property>
+			</Item>
 			<Item Name="Inventory Only" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{5A78F6E2-44E4-4F5F-8CE5-4DC0B5ED557E}</Property>
@@ -451,7 +590,7 @@ DirectoryIndex index.htm
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{269733F5-13EC-47DC-A8CE-01D5D703C143}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">36</Property>
+				<Property Name="Bld_version.build" Type="Int">47</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
@@ -465,11 +604,10 @@ DirectoryIndex index.htm
 				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/system/www</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="Source[0].itemID" Type="Str">{03D07CB6-A781-480D-B136-13B1B69C1ED5}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{B0C89E89-7E16-4E1B-8B98-335C634C8885}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (lunch only).vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[10].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Success.html</Property>
@@ -480,6 +618,13 @@ DirectoryIndex index.htm
 				<Property Name="Source[12].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[12].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Return_Redirect.html</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[13].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Error_Location.html</Property>
+				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (inventory only).vi</Property>
+				<Property Name="Source[14].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Draw_Redirect.html</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -504,8 +649,9 @@ DirectoryIndex index.htm
 				<Property Name="Source[9].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/RT CompactRIO Target/NIInventory/Public Content/Delete_Success.html</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">13</Property>
+				<Property Name="SourceCount" Type="Int">15</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Inventory Only</Property>
 				<Property Name="TgtF_internalName" Type="Str">Inventory Only</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
@@ -530,7 +676,7 @@ DirectoryIndex index.htm
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{430E5347-EB7B-4713-8CE2-19EC34C35BE4}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.build" Type="Int">6</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
@@ -541,7 +687,7 @@ DirectoryIndex index.htm
 				<Property Name="Destination[1].path" Type="Path">/c/ni-rt/startup/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{84DD875C-6DB7-4B89-8DEA-C2958549B644}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E619746B-D667-40D1-BEAE-73D734FB6E06}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/RT CompactRIO Target/RT-Main (lunch only).vi</Property>
